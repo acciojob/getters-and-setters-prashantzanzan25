@@ -1,22 +1,35 @@
 //complete this code
-class Student {
+class Person {
   constructor(name, age) {
-    this.name = name;
-    this.age = age;
+    this._name = name;
+    this._age = age;
   }
 
-  study() {
-    console.log(`${this.name} is studying.`);
+  get name() {
+    return this._name;
+  }
+
+  set age(age) {
+    this._age = age;
   }
 }
 
-class Teacher {
+class Student extends Person {
   constructor(name, age) {
-    this.name = name;
-    this.age = age;
+    super(name, age);
+  }
+
+  study() {
+    console.log(`${this.name} is studying`);
+  }
+}
+
+class Teacher extends Person {
+  constructor(name, age) {
+    super(name, age);
   }
 
   teach() {
-    console.log(`${this.name} is teaching.`);
+    console.log(`${this.name} is teaching`);
   }
 }
