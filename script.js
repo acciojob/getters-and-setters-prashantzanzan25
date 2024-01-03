@@ -1,21 +1,30 @@
-//complete this code
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class Person {
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
+    }
 
-    def get_name(self):
-        return self.name
+    get name() {
+        return this._name;
+    }
 
-    def set_age(self, age):
-        self.age = age
+    set age(age) {
+        this._age = age;
+    }
 
+    get age() {
+        return this._age;
+    }
+}
 
-class Student(Person):
-    def study(self):
-        print(f"{self.get_name()} is studying")
+class Student extends Person {
+    study() {
+        console.log(`${this.name} is studying`);
+    }
+}
 
-
-class Teacher(Person):
-    def teach(self):
-        print(f"{self.get_name()} is teaching")
+class Teacher extends Person {
+    teach() {
+        console.log(`${this.name} is teaching`);
+    }
+}
